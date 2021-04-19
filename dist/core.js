@@ -39,33 +39,28 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Core = void 0;
 var instances_1 = __importDefault(require("./instances"));
 var routes_1 = __importDefault(require("./routes"));
 var Logger_1 = __importDefault(require("./providers/Logger"));
-var Core = (function () {
-    function Core(_config) {
-        if (_config === void 0) { _config = null; }
-        if (_config === null) {
-            throw new Error('Configuração passada inválida.');
-        }
-        this.config = _config;
-    }
-    Core.prototype.init = function (server) {
-        return __awaiter(this, void 0, void 0, function () {
-            var instances;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0: return [4, instances_1.default(this.config)];
-                    case 1:
-                        instances = _a.sent();
+function Core(config) {
+    if (config === void 0) { config = null; }
+    return __awaiter(this, void 0, void 0, function () {
+        var instances, init;
+        return __generator(this, function (_a) {
+            switch (_a.label) {
+                case 0: return [4, instances_1.default(config)];
+                case 1:
+                    instances = _a.sent();
+                    init = function (server) {
                         routes_1.default.serverRoutes(instances, server);
                         if (process.argv.length > 2)
                             Logger_1.default.init(server);
-                        return [2, server];
-                }
-            });
+                        return server;
+                    };
+                    return [2, { init: init }];
+            }
         });
-    };
-    return Core;
-}());
-exports.default = Core;
+    });
+}
+exports.Core = Core;

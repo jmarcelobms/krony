@@ -3,27 +3,19 @@ import Instances from './instances'
 import Routes from './routes'
 import Logger from './providers/Logger'
 
-class Core {
-  private config: Config
-  constructor(_config: Config = null) {
+async function Core(config: Config = null) {
+  const instances = await Instances(config)
 
-    if (_config === null) {
-      throw new Error('Configuração passada inválida.')
-    }
-
-    this.config = _config
-  }
-
-  async init(server: Express) {
-    const instances = await Instances(this.config)
-
+  const init = (server: Express) => {
     Routes.serverRoutes(instances, server)
 
-      if (process.argv.length > 2)
+    if (process.argv.length > 2)
       Logger.init(server)
 
     return server
   }
+
+  return { init }
 }
 
-export default Core
+export { Core }

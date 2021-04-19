@@ -11,36 +11,6 @@ var Routes = (function () {
         }
         this.routes.set(key, handler);
     };
-    Routes.prototype.get = function (path, handler) {
-        this.set("GET - " + path, handler);
-    };
-    Routes.prototype.post = function (path, handler) {
-        this.set("POST - " + path, handler);
-    };
-    Routes.prototype.put = function (path, handler) {
-        this.set("PUT - " + path, handler);
-    };
-    Routes.prototype.delete = function (path, handler) {
-        this.set("PUT - " + path, handler);
-    };
-    Routes.prototype.head = function (path, handler) {
-        this.set("HEAD - " + path, handler);
-    };
-    Routes.prototype.connect = function (path, handler) {
-        this.set("CONNECT - " + path, handler);
-    };
-    Routes.prototype.options = function (path, handler) {
-        this.set("OPTIONS - " + path, handler);
-    };
-    Routes.prototype.trace = function (path, handler) {
-        this.set("TRACE - " + path, handler);
-    };
-    Routes.prototype.patch = function (path, handler) {
-        this.set("PATCH - " + path, handler);
-    };
-    Routes.prototype.all = function (path, handler) {
-        this.set("ALL - " + path, handler);
-    };
     Routes.prototype.serverRoutes = function (instances, server) {
         this.routes.forEach(function (value, key) {
             var _a = key.split('-').map(function (v) { return v.trim(); }), method = _a[0], path = _a[1];
