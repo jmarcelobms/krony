@@ -1,0 +1,11 @@
+declare function GET(path: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+declare function POST(path: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+declare function PUT(path: string, handler: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+declare function DELETE(path: string, handler: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+declare function HEAD(path: string, handler: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+declare function CONNECT(path: string, handler: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+declare function OPTIONS(path: string, handler: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+declare function TRACE(path: string, handler: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+declare function PATCH(path: string, handler: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+declare function ALL(path: string, handler: string): (target: any, key: string, descriptor: PropertyDescriptor) => void;
+export { GET, POST, PUT, DELETE, TRACE, HEAD, ALL, OPTIONS, PATCH, CONNECT };
