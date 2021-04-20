@@ -21,6 +21,8 @@ Destá forma no final teremos cerca de 99% dos códigos feitos, pois faremos a c
 Com exeção de decorators auxiliares que são:
 - **@Header('','')**: Este decorator é toda vez que chamarmos a rota ele irá passar neste "middleware" para adicionar um novo **header**.
 
+Desta forma teremos todo poder do express porém no desenvolvimento de forma muito simples
+
 
 ### Vantagens
 - Sintaxe limpa.
