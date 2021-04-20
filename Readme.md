@@ -1,5 +1,23 @@
 ## Krony (Desenvolvimento)
 
+## Porque usar o krony?
+O krony foi criado para simplificar o modo que trabalhamos com rotas no express, como a sintaxe de decorators acaba sendo um pouco mais legível e de fácil escrita.
+
+Uma das grandes vantagens é que após a iniciação do projeto, temos simples rotas express como se fosses escritas usando a seguinte sintaxe:
+```javascript
+const {Router} =  require('express')
+const router = Router()
+
+router.get('/',(req,res)=>{
+  return res.send('Hello world')
+})
+```
+
+Destá forma no final teremos cerca de 99% dos códigos feitos, pois faremos a criação das rotas em express de acordo com o decorators nos controllers. 
+
+Com exeção de decorators auxiliares que são:
+- **@Header('','')**: Este decorator é toda vez que chamarmos a rota ele irá passar neste "middleware" para adicionar um novo **header**.
+
 # Exemplo 
 
 ## Configuração
