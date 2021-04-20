@@ -40,7 +40,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Core = void 0;
-var instances_1 = __importDefault(require("./instances"));
+var controllers_1 = __importDefault(require("./controllers"));
 var routes_1 = __importDefault(require("./routes"));
 var Logger_1 = __importDefault(require("./providers/Logger"));
 function Core(config) {
@@ -49,7 +49,7 @@ function Core(config) {
         var instances, init;
         return __generator(this, function (_a) {
             switch (_a.label) {
-                case 0: return [4, instances_1.default(config)];
+                case 0: return [4, controllers_1.default(config)];
                 case 1:
                     instances = _a.sent();
                     init = function (server) {

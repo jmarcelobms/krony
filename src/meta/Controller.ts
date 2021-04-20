@@ -1,7 +1,7 @@
 
 function Controller(value: string) {
-  return function (constructor) {
-    constructor.prototype.url = value;
+  return function (constructor: any) {
+    constructor.prototype.URLDECORATOR = value;
   }
 }
 

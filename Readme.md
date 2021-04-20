@@ -1,9 +1,42 @@
-## Framework Http feito sobe o ExpressJS
+## Krony (Desenvolvimento)
 
-## Exemplo
+# Exemplo 
 
-Exemplo de uso dos decorators ('Controller','GET','Redirect','Header')
+## Configuração
+Para iniciar projeto precisamos passar uma configuração, que nela irá informar onde irá conter todos controllers da aplicação.
 
+```javascript
+const config = {
+    controllers: path.resolve(__dirname, 'controllers')
+}
+```
+
+Iniciando projeto.
+```javascript
+import { krony } from 'krony'
+import path from 'path'
+import express from 'express'
+
+const app = async () => {
+  const config = {
+    controllers: path.resolve(__dirname, 'controllers')
+  }
+  
+  const app = await krony(config)
+
+  const http = app.init(express())
+
+  http.use(express.json())
+
+  http.listen(5050, () => {
+    console.log('http://localhost:5050')
+  })
+}
+
+app()
+```
+
+Exemplo Controller
 ```javascript
 @Controller('/Clientes')
 class Cliente {
@@ -27,14 +60,9 @@ class Cliente {
 }
 ```
 
-## Funcionalidades
-- Auto import dos controllers
-- Uso de decorators para uma sintaxe mais limpa
-- Adição de caches
 
-
-## Features
-- Cache
-- Worker
-- Etc..
-
+## Decorators
+- Controller 
+- GET,POST ... (Inclui todos métodos suportados pelo express).
+- Redirect 
+- Header

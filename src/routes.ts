@@ -22,7 +22,7 @@ class Routes {
       const controller = instances.find(v => v.name === Class)
 
       if (controller && MethodClass in controller.instance) {
-        const pathResolve = controller.instance.url === '/' ? '' : controller.instance.url
+        const pathResolve = controller.instance.URLDECORATOR === '/' ? '' : controller.instance.URLDECORATOR
         server[method.toLowerCase()](`${pathResolve}${path}`, controller.instance[MethodClass])
       }
     })
