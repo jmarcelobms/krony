@@ -1,4 +1,4 @@
-## Krony (Desenvolvimento) 🚀
+## Krony (Em Desenvolvimento) 🚀
 
 (Módulo ainda não criado, caso queira usar terá que utilizar o próprio repositório)
 
