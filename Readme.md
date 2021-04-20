@@ -99,3 +99,11 @@ class Cliente {
 - GET,POST ... (Inclui todos métodos suportados pelo express).
 - Redirect 
 - Header
+
+
+## Flags
+Caso queira lista as rotas dos seus projetos poderá passar uma das flags abaixo
+Modo de uso:
+    - node index.js --[ flag ]
+- **--log** faz o log de cada request que chega da aplicação
+- **--list** lista as rotas presentes em toda aplicação.
