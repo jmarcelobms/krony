@@ -109,3 +109,8 @@ Modo de uso:
     - node index.js --[ flag ]
 - **--log** faz o log de cada request que chega da aplicação
 - **--list** lista as rotas presentes em toda aplicação.
+
+
+
+## Observações
+Todas as modificações podem sofrer grandes alterações.
