@@ -113,5 +113,4 @@ Modo de uso:
 
 
 ## Observações
-
 Todas as modificações podem sofrer grandes alterações.
